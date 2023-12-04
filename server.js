@@ -1,16 +1,16 @@
 import express from 'express'
-import RouterNumeros from'./router/numeros.js'
+import RouterVoto from'./router/voto.js'
 
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-app.use('/numeros', express.static('public'));
+app.use('/voto', express.static('public'));
 
 // -----------------------------------------------
-//         API RESTful : Libros
+//         API RESTful : Voto
 // -----------------------------------------------
-app.use('/numeros', new RouterNumeros().start())
+app.use('/voto', new RouterVoto().start())
 
 // -----------------------------------------------
 //        LISTEN DEL SERVIDOR EXPRESS
